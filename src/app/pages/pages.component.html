@@ -1,0 +1,28 @@
+<!--
+<div>
+  <h2>Nouvelle page</h2>
+  <div>
+    <h3>Titre de la page</h3>
+    <input type="text" class="form-control" [(ngModel)]="valeurTitle">
+  </div>
+  <div>
+    <h3>Contenu</h3>
+    <input type="text" class="form-control" [(ngModel)]="valeurContent">
+  </div>
+  <button (click)="addPage(valeurTitle, valeurContent)">Enregistrer</button>
+</div>
+<div>
+  <h2>Supprimer une page</h2>
+  <input type="number" class="form-control" [(ngModel)]="id">
+  <button (click)="deletePage(id)">Supprimer</button>
+</div>
+<div *ngFor="let page of pages">
+  <h2>N°{{page.id}}: {{page.title}}</h2>
+  <p>{{page.content}}</p>
+</div>
+-->
+<app-navbar></app-navbar>
+<div *ngFor="let page of pages">
+  <h2>N°{{page.id}}: {{page.title}}</h2>
+  <p>{{page.content}}</p>
+</div>
