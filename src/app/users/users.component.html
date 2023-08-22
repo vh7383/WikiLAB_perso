@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <h2>Gestion des utilisateurs</h2>
+
+    <!-- Formulaire pour ajouter un utilisateur -->
+    <form (ngSubmit)="addUser()" #userForm="ngForm" class="mb-4">
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" class="form-control" [(ngModel)]="newUser.name" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" class="form-control" [(ngModel)]="newUser.password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Rôle</label>
+            <select id="role" class="form-control" [(ngModel)]="newUser.role" name="role" required>
+                <option value="admin">Administrateur</option>
+                <option value="modo">Modérateur</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter Utilisateur</button>
+    </form>
+
+    <!-- Bouton de retour à la page précédente -->
+    <button class="btn btn-secondary mb-3" (click)="goBack()">Retour à la page précédente</button>
+
+    <!-- Liste des utilisateurs -->
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let user of users">
+            {{ user.id }}
+            {{ user.name }}
+            {{ user.role}}
+            <button class="btn btn-sm btn-danger float-right" (click)="deleteUser(user.id)">Supprimer</button>
+        </li>
+    </ul>
+</div>

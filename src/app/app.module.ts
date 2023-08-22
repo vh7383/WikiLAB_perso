@@ -6,34 +6,32 @@ import { PagesComponent } from './pages/pages.component';
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PageViewComponent } from './page-view/page-view.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
-import { SinglePageComponent } from './single-page/single-page.component';
-import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule} from "@angular/forms";
+import { UsersComponent } from './users/users.component';
+import { ListPageComponent } from './list-page/list-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
     NavbarComponent,
-    PageViewComponent,
     HomePageComponent,
     EditPageComponent,
-    SinglePageComponent,
-    AuthComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
+    ListPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

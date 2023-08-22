@@ -38,4 +38,19 @@ export class UserService {
   logout(): Observable<any> {
     return this.http.post(`${this.apiUrl}/logout`, {});
   }
+
+  // Méthode pour récupérer tous les utilisateurs
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/users`);
+  }
+
+  // Méthode pour récupérer un utilisateur par son ID
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/users/${id}`);
+  }
+
+  // Méthode pour supprimer un utilisateur
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/users/${id}`);
+  }
 }

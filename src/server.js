@@ -9,7 +9,7 @@ const port = 3000;
 
 const connection = mysql.createConnection({
   host     : '192.168.0.15',
-  port     : '3011',
+  port     : 3011,
   user     : 'root',
   password : 'silab',
   database : 'WikiLAB'
@@ -89,7 +89,7 @@ app.delete('/pages/:id', (req, res) => {
 
 // Endpoint pour récupérer tous les utilisateurs
 app.get('/users', (req, res) => {
-  connection.query('SELECT * FROM utilisateur', (error, results) => {
+  connection.query('SELECT * FROM users', (error, results) => {
     if (error) throw error;
     res.send(results);
   });
