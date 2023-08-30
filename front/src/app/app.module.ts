@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule} from "@angular/forms";
 import { UsersComponent } from './users/users.component';
 import { ListPageComponent } from './list-page/list-page.component';
+import {FroalaEditorModule} from "angular-froala-wysiwyg";
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -26,14 +28,15 @@ import { ListPageComponent } from './list-page/list-page.component';
     UsersComponent,
     ListPageComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FroalaEditorModule,
+    ],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<form [formGroup]="form">
+    <input formControlName="title" type="text" placeholder="Votre titre ici" id="title">
+
+    <div [froalaEditor]="froalaOptions" formControlName="content" id="content">Votre contenu ici</div>
+    {{ form.controls['content'].value }}
+    <button (click)="savePage()">Enregistrer</button>
+</form>
+
+
