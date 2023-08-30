@@ -32,7 +32,7 @@ export class EditPageComponent {
     savePage() {
         const title = this.form.get('title')?.value;
         const content = this.form.get('content')?.value;
-        this.pageService.addPage(title, content).subscribe(response => {
+        this.pageService.addPage(title, content).subscribe(_ => {
             alert('Page ajoutée avec succès !');
         }, error => {
             console.log('Erreur lors de l’ajout de la page', error);

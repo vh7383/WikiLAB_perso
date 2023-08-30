@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,19 +7,6 @@ import { UserService } from '../services/user.service';
 })
 export class HomePageComponent {
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
-  /*
-  onSubmit(): void {
-    this.userService.login(this.username, this.password).subscribe(
-      response => {
-        console.log('Connexion réussie');        
-      },
-      error => {
-        console.log('Echec de la connexion', error);
-        
-      }
-    )
-  }
-  */
 }

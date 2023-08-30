@@ -22,7 +22,7 @@ export class LoginComponent {
     }
     this.userService.login(this.username, this.password)
       .subscribe(
-        response => {
+        _=> {
           console.log('Utilisateur connecté avec succès');
           this.username = '';
           this.password = '';
