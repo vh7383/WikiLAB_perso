@@ -28,8 +28,6 @@ export default function (app: any) {
         });
     };
 
-    app.use(jwtCheck);
-
     // Vérification du rôle de l'utilisateur
     const checkRole = (role: string) => {
         return (req: Request, res: Response, next: NextFunction) => {

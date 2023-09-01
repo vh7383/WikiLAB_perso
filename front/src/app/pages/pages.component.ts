@@ -18,9 +18,10 @@ export class PagesComponent implements OnInit {
   }
 
   loadPages(): void {
-    this.pageService.getPages().subscribe(
-        pages => this.pages = pages,
-        error => console.log(error)
+    this.pageService.getPages().subscribe({
+        next:pages => this.pages = pages,
+        error: error => console.log(error)
+        }
     );
   }
 }

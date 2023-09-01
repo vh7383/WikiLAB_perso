@@ -24,7 +24,7 @@ export default (connection: Connection) => {
         const id = req.params.id; // Ici, userId prend la valeur du paramètre de route :id
         const sql = `SELECT * FROM users WHERE id = ?`;
         connection.query(sql, [id], (error, result: any[]) => {
-            if (error) return next(error);
+            if (error) return next(new HttpError('Erreur lors de la récupération de l\'utilisateur', 500));
             res.send(result[0]);
         });
     });
