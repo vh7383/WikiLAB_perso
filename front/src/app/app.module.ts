@@ -15,8 +15,8 @@ import { UsersComponent } from './users/users.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { FroalaEditorModule } from "angular-froala-wysiwyg";
 import { UserService } from "./services/user.service";
-import { ErrorInterceptor } from "./services/error.interceptor";
-import { HttpInterceptor} from "@angular/common/http";
+import { DetailPageComponent } from './detail-page/detail-page.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { HttpInterceptor} from "@angular/common/http";
     RegisterComponent,
     LoginComponent,
     UsersComponent,
-    ListPageComponent
+    ListPageComponent,
+    DetailPageComponent
   ],
     imports: [
         BrowserModule,
@@ -39,7 +40,6 @@ import { HttpInterceptor} from "@angular/common/http";
         FroalaEditorModule,
     ],
   providers: [
-      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
       UserService
   ],
   bootstrap: [AppComponent]

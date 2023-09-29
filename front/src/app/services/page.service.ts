@@ -14,11 +14,11 @@ export class PageService {
   }
 
   getPages(): Observable<Page[]> {
-    return this.http.get<Page[]>(`${this.apiUrl}/pages`);
+    return this.http.get<Page[]>(`${this.apiUrl}/api/pages/getAllPages`);
   }
 
-  getPage(id: string): Observable<Page> {
-    return this.http.get<Page>(`${this.apiUrl}/pages/${id}`);
+  getPageById(id: string): Observable<Page> {
+    return this.http.get<Page>(`${this.apiUrl}/api/pages/getPageById/${id}`);
   }
 
   addPage(title: string, content: string) {
@@ -28,7 +28,7 @@ export class PageService {
     };
     console.log("Title type:", typeof title);
     console.log("Content type:", typeof content);
-    return this.http.post(`${this.apiUrl}/pages`, body);
+    return this.http.post(`${this.apiUrl}/api/pages/createPage`, body);
   }
 
   updatePage(page: Page): Observable<Page> {

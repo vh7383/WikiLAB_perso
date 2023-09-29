@@ -17,7 +17,7 @@ export class UserService {
   // Méthode pour enregistrer un utilisateur
   register(username: string, password: string): Observable<any> {
     const userData = { username, password };
-    return this.http.post(`${this.apiUrl}/register`, userData);
+    return this.http.post(`${this.apiUrl}/api/users/register`, userData);
   }
 
   // Méthode pour vérifier si un utilisateur existe déjà
@@ -29,7 +29,7 @@ export class UserService {
   // Méthode pour se connecter
   login(username: string, password: string): Observable<User> {
     const body = { username, password };
-    return this.http.post<User>(`${this.apiUrl}/login`, body).pipe(
+    return this.http.post<User>(`${this.apiUrl}/api/users/login`, body).pipe(
         tap(response => {
           if (response.token) {
             localStorage.setItem('access_token', response.token);
@@ -51,7 +51,7 @@ export class UserService {
 
   // Méthode pour récupérer tous les utilisateurs
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}/users`);
+    return this.http.get<User[]>(`${this.apiUrl}/api/users/getAllUsers`);
   }
 
   // Méthode pour récupérer un utilisateur par son ID
